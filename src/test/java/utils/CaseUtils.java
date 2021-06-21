@@ -44,4 +44,10 @@ public class CaseUtils {
     Assert.assertEquals(
         expectedCaseMap.get("Description"), caseResponse.get("description").getAsString());
   }
+
+  public static void assertResponseErrorMessage(String message) {
+    JsonObject jsonResponse = CaseUtils.response.then().extract().as(JsonObject.class);
+    String errorResponse = jsonResponse.get("error").getAsString();
+    Assert.assertEquals(message, errorResponse);
+  }
 }

@@ -31,5 +31,12 @@ public class ViewCaseStepDefinitions implements En {
     Then(
         "an investigation case is returned to the user with the following data:",
         CaseUtils::assertViewCase);
+
+    When(
+        "User views an investigation case with id {int}",
+        // Write code here that turns the phrase above into concrete actions
+        CaseUtils::getCaseBackend);
+
+    Then("^a \"([^\"]*)\" response is returned$", CaseUtils::assertResponseErrorMessage);
   }
 }
