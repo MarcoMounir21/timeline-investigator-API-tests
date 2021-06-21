@@ -37,6 +37,6 @@ public class ViewCaseStepDefinitions implements En {
         // Write code here that turns the phrase above into concrete actions
         CaseUtils::getCaseBackend);
 
-    Then("^a \"([^\"]*)\" response is returned$", CaseUtils::assertResponseErrorMessage);
+    Then("^a \"([^\"]*)\" message is returned to the user$", CaseUtils::assertResponseErrorMessage);
   }
 }
